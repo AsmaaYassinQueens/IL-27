@@ -101,7 +101,7 @@ if __name__ == "__main__":
     num_datasets = len(logratio_cols)
     # Create boolean matrices for upregulation and downregulation
     up_matrix = pd.DataFrame({col: (merged_data[col] > threshold) for col in logratio_cols})
-    down_matrix = pd.DataFrame({col: (merged_data[col] < -threshold) for col in logratio_col})
+    down_matrix = pd.DataFrame({col: (merged_data[col] < -threshold) for col in logratio_cols})
     # Count how many datasets each gene is upregulated or downregulated
     up_mask = up_matrix.sum(axis=1) >= num_datasets
     down_mask = down_matrix.sum(axis=1) >= num_datasets
